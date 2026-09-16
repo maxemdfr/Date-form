@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reset.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+    <link rel="shortcut icon" href="favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="favicon/site.webmanifest" />
+    <title>Aller dis oui...</title>
+</head>
+<body>
+    <div class="floating-bg" id="floatingBg"></div>
+    <div class="notification"></div>
+    
+    <div class="container visible" id="helloSlide">
+        <div class="icon-box">
+            <span class="material-icons-round">auto_awesome</span>
+        </div>
+
+        <h2>Coucouuu !</h2>
+        <p>Je voulais te demander un truc... mais je suis un peu timide</p>
+
+        <button id="startBtn" class="button">C'est quoiii ? <span class="material-icons-outlined">arrow_forward</span></button>
+    </div>
+
+    <div class="container" id="questionSlide">
+        <div class="heart-box">
+            <span class="material-icons-round">favorite</span>
+        </div>
+
+        <h2>Est ce que tu veux venir en date avec moi ?</h2>
+        <p>(Promis je t'achèterai à manger 🍪)</p>
+
+        <div class="buttons">
+            <button class="button" id="yesBtn">Oui 💖</button>
+            <button class="button" id="noBtn">Non</button>
+        </div>
+
+        <p class="stop-playing-hard-message">Eh arrête de te faire désirer ! 😕</p>
+    </div>
+
+    <div class="container" id="happySlide">
+        <div class="confetti-burst" id="confettiBurst"></div>
+
+        <div class="icons-box">
+            <span class="material-icons-round">favorite</span>
+            <span class="material-icons-round">favorite</span>
+            <span class="material-icons-round">favorite</span>
+        </div>
+
+        <h2>YEEEEES !!!</h2>
+        <p>Je suis troooop content que tu aies dit oui !</p>
+
+        <p>J'ai un date !! 🥂</p>
+    </div>
+
+    <div class="container" id="organisationSlide">
+        <div class="icon-box">
+            <span class="material-icons-round">calendar_today</span>
+        </div>
+
+        <h2>Quel genre de date ?</h2>
+        <p>Choisis ce que tu préfères !</p>
+
+        <div class="date-ideas">
+            <div class="date-idea button" data-choice="sushis">
+                <span>🍣</span>
+                <p>Sushis</p>
+            </div>
+
+            <div class="date-idea button" data-choice="McDo">
+                <span>🍔</span>
+                <p>McDo</p>
+            </div>
+
+            <div class="date-idea button" data-choice="film">
+                <span>🎬</span>
+                <p>Film</p>
+            </div>
+
+            <div class="date-idea button" data-choice="balade">
+                <span>🖼️</span>
+                <p>Balade</p>
+            </div>
+
+            <div class="date-idea button" data-choice="piano">
+                <span>🎹</span>
+                <p>Piano</p>
+            </div>
+
+            <div class="date-idea button" data-choice="cuisine">
+                <span>🍳</span>
+                <p>Cuisine</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="locationSlide">
+        <div class="icon-box">
+            <span class="material-icons-round">location_on</span>
+        </div>
+
+        <h2>On va où ?</h2>
+        <p>Choisis l'endrtoit parfait !</p>
+
+        <div class="date-locations">
+            <div class="date-location button" data-choice="son endroit préféré">
+                <span>📍</span>
+                <p>Ton endroit préféré</p>
+            </div>
+
+            <div class="date-location button" data-choice="ton endroit préféré">
+                <span>✨</span>
+                <p>Mon endroit préféré</p>
+            </div>
+
+            <div class="date-location button" data-choice="que tu la surprenne">
+                <span>🎲</span>
+                <p>Surprend moi !</p>
+            </div>
+
+            <div class="date-location button" data-choice="qu'on voit ça ensemble">
+                <span>🤝</span>
+                <p>On verra ensemble</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="communicationSlide">
+        <div class="icon-box">
+            <span class="material-icons-round">phone_enabled</span>
+        </div>
+
+        <h2>Comment je peux te contacter ?</h2>
+        <p>Passe moi ton numéro ou tes réseaux !</p>
+
+        <input id="communicationInput" type="text" placeholder="Téléphone, Instagram, etc">
+
+        <button class="button" id="showRecapBtn">Envoyer <span class="material-icons-round">send</span></button>
+    </div>
+
+    <div class="container" id="recapSlide">
+        <div class="icon-box">
+            <span class="material-icons-round">check</span>
+        </div>
+
+        <h2>Parfait ! <span class="material-icons-round">celebration</span></h2>
+        <p>Je te contacterai très bientôt ! 💕</p>
+        
+        <div class="recap-box">
+            <div class="recap-row">
+                <div class="recap-icon">
+                    <span id="recapDateIdeaIcon" class="recap-emoji"></span>
+                </div>
+
+                <div class="recap-text">
+                    <h4>Type de date</h4>
+                    <p id="recapDateIdea"></p>
+                </div>
+            </div>
+
+            <div class="recap-row">
+                <div class="recap-icon">
+                    <span id="recapLocationIcon" class="recap-emoji"></span>
+                </div>
+
+                <div class="recap-text">
+                    <h4>Lieu</h4>
+                    <p id="recapLocation"></p>
+                </div>
+            </div>
+
+            <div class="recap-row">
+                <div class="recap-icon">
+                    <span class="recap-emoji">📱</span>
+                </div>
+
+                <div class="recap-text">
+                    <h4>Contact</h4>
+                    <p id="recapContact"></p>
+                </div>
+            </div>
+        </div>
+
+        <p>J'ai trop hâte pour notre date ! 🥰</p>
+
+        <button class="button" id="submitBtn">Valider le date</button>
+        <button class="link" id="restartBtn">Recommencer</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
